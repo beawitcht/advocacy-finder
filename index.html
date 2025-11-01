@@ -6,10 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Advocacy Finder - England</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="main.js"></script>
 </head>
 
 <body>
+    <header>
+        <h1>Advocacy Finder - England</h1>
+        <p>Find advocacy services in your local area.</p>
+    </header>
 
+    <main>
+        <section id="search">
+            <h2>Search for Advocacy Services</h2>
+            <form id="search-form">
+                <label for="postcode">Postcode:</label>
+                <input type="text" id="postcode" name="postcode" placeholder="e.g. TN39 3HN">
+                <button type="submit">Find Service</button>
+            </form>
+        </section>
+
+        <section id="address">
+            <h2>Search Results</h2>
+            <div id="address-container">
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <span>©️ Knowledge belongs to all without limits</span>
+    </footer>
 </body>
 
 </html>
