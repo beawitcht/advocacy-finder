@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.remove('search-done');
+
     const form = document.getElementById('search-form');
     const postcodeInput = document.getElementById('postcode');
     const container = document.getElementById('address-container');
@@ -7,6 +9,44 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!localAuthority) return null;
         if (localAuthority.parent && localAuthority.parent.name) return localAuthority.parent.name;
         return localAuthority.name || null;
+    }
+
+    // normalize names for comparison (case-insensitive, collapse whitespace)
+    function normalizeName(s) {
+        return (s || '').toString().toLowerCase().replace(/\s+/g, ' ').trim();
+    }
+
+    function hideAllAreas() {
+        document.querySelectorAll('.area').forEach(a => a.classList.remove('visible'));
+    }
+
+    function showMatches(authorityName) {
+        hideAllAreas();
+        if (!authorityName) return;
+        const target = normalizeName(authorityName);
+        if (!target) return;
+
+        const areas = Array.from(document.querySelectorAll('.area'));
+        const matched = areas.filter(area => {
+            const nameEl = area.querySelector('.area-name');
+            const areaName = nameEl ? normalizeName(nameEl.textContent) : '';
+            // try exact match or substring both ways to be forgiving
+            return areaName === target || areaName.includes(target) || target.includes(areaName);
+        });
+
+        if (matched.length === 0) {
+            // no match — leave all hidden
+            return;
+        }
+
+        matched.forEach(a => a.classList.add('visible'));
+        // scroll first match into view for convenience
+        try {
+            matched[0].scrollIntoView({ behavior: 'smooth', block: 'center' });
+            matched[0].focus?.();
+        } catch (e) {
+            /* ignore scroll errors */
+        }
     }
 
     async function fetchJsonOrDetectHtml(url) {
@@ -38,12 +78,15 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', async (e) => {
         e.preventDefault();
         container.textContent = '';
+        hideAllAreas();
+
         const postcode = postcodeInput.value.trim();
         if (!postcode) {
             container.textContent = 'Please enter a postcode.';
             return;
         }
 
+        document.body.classList.add('search-done');
         container.textContent = 'Searching...';
 
         const target = 'https://www.gov.uk/api/local-authority?postcode=' + encodeURIComponent(postcode);
@@ -90,6 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 select.addEventListener('change', async (ev) => {
                     const slug = ev.target.value;
+                    hideAllAreas();
                     if (!slug) return;
                     container.textContent = 'Loading authority data...';
 
@@ -110,7 +154,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         const authData = authResult.json;
                         if (authData && authData.local_authority) {
                             const keepName = pickDisplayNameFromLocalAuthority(authData.local_authority);
-                            container.innerHTML = `<div>Kept name: <strong>${String(keepName || 'none')}</strong></div>`;
+                            container.innerHTML = `<div><strong>${String(keepName || 'none')}</strong></div>`;
+                            showMatches(keepName);
                         } else {
                             // fallback: show JSON if shape unexpected
                             container.innerHTML = `<pre>${JSON.stringify(authData, null, 2)}</pre>`;
@@ -128,6 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (data && data.local_authority) {
                 const keepName = pickDisplayNameFromLocalAuthority(data.local_authority);
                 container.innerHTML = `<div><strong>${String(keepName || 'none')}</strong></div>`;
+                showMatches(keepName);
                 return;
             }
 

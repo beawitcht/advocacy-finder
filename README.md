@@ -1,5 +1,5 @@
 # Advocacy-Finder
-WIP Search for advocacy services in England
+Search for advocacy services in England - mainly statutory
 
 
 

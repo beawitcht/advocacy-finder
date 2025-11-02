@@ -1,3 +1,171 @@
+/* layout: center everything and show providers horizontally */
+html,
 body {
-    color: #f9f8f6;
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    background: #f9f8f6;
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* center page content horizontally */
+    justify-content: flex-start;
+    color: #111;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+}
+
+/* constrain main content and keep it centred */
+main {
+    width: 92%;
+    max-width: 1100px;
+    box-sizing: border-box;
+    padding: 20px 0;
+}
+
+/* header/footer center */
+header,
+footer {
+    width: 100%;
+    text-align: center;
+    margin: 8px 0;
+}
+
+/* sections */
+#search,
+#address,
+#areas {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
+/* areas hidden by default; visible when .visible applied */
+.area {
+    padding: 12px;
+    margin: 12px 0;
+    display: none;
+    /* hidden by default */
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 8px;
+}
+
+.area.visible {
+    display: block;
+}
+
+.area-name {
+    margin: 0 0 12px 0;
+    color: black;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* display providers in a horizontal flexible row, wrap as needed */
+.providers {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* center providers inside area */
+    align-items: flex-start;
+}
+
+/* provider card styling - compact, centered content */
+.provider {
+    padding: 12px;
+    margin: 0;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 8px;
+    min-width: 220px;
+    max-width: 320px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+    border: 1px solid #ececec;
+    box-sizing: border-box;
+}
+
+/* links and text */
+a {
+    color: inherit;
+}
+
+.provider-name a {
+    color: black;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+/* service tags centered beneath provider info */
+.tags {
+    margin-top: 10px;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.tag {
+    display: inline-block;
+    background: #0d2846;
+    color: #fff;
+    padding: 6px 10px;
+    margin: 2px;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+/* phone/email centered and slightly smaller */
+.provider-phone,
+.provider-email {
+    font-size: 18px;
+    margin-top: 8px;
+    text-align: center;
+    color: #333;
+}
+
+/* headings */
+h4 {
+    font-size: 18px;
+    margin: 6px 0;
+}
+
+h1 {
+    font-size: 32px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+p {
+    font-size: 18px;
+}
+
+/* small screens tweak */
+@media (max-width: 520px) {
+    .provider {
+        min-width: 100%;
+        max-width: 100%;
+    }
+}
+
+body:not(.search-done) #address h2,
+body:not(.search-done) #areas h2 {
+    display: none;
+}
+
+.bea{
+    text-decoration: none;
 }

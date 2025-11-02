@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Advocacy Finder - England</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.min.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <h1>Advocacy Service Search - England</h1>
+        <p>Find statutory advocacy services in your local area.</p>
+    </header>
+
+    <main>
+        <section id="search">
+            <h2>Search for Advocacy Services</h2>
+            <form id="search-form">
+                <label for="postcode">Postcode:</label>
+                <input type="text" id="postcode" name="postcode" placeholder="e.g. TN39 3HN">
+                <button type="submit">Find Service</button>
+            </form>
+        </section>
+
+        <section id="address">
+            <h2>Authority Name</h2>
+            <div id="address-container"></div>
+        </section>
+
+        <section id="areas">
+            <h2>Providers</h2>
+            {% for area in areas %}
+            <div class="area" id="area-{{ loop.index }}">
+                <h3 class="area-name">{{ area.area }}</h3>
+
+                <div class="providers">
+                    {% for p in area.providers %}
+                    <div class="provider">
+                        {% if p.website %}
+                        <h4 class="provider-name"><a href="{{ p.website }}" target="_blank" rel="noopener noreferrer">{{
+                                p.name }}</a></h4>
+                        {% else %}
+                        <h4 class="provider-name">{{ p.name }}</h4>
+                        {% endif %}
+
+                        {% if p.phone %}
+                        <div class="provider-phone">Phone: <a href="tel:{{ p.phone }}">{{ p.phone }}</a></div>
+                        {% endif %}
+                        {% if p.email %}
+                        <div class="provider-email">Email: <a href="mailto:{{ p.email }}">{{ p.email }}</a></div>
+                        {% endif %}
+
+                        {% if p.services %}
+                        <div class="tags" aria-label="services">
+                            {% for tag in p.services %}
+                            <span class="tag">{{ tag }}</span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+    </main>
+
+    <footer>
+        <span><a class="bea" href="https://beawitcht.carrd.co/" target="_blank" rel="noopener noreferrer">Developed by Bea 💜</a></span><br>
+        <span>©️ Knowledge belongs to all without limits</span>
+    </footer>
+</body>
+
+</html>
