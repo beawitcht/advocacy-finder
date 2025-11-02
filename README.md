@@ -1,7 +1,8 @@
 # Advocacy-Finder
 Search for advocacy services in England - mainly statutory
 
-
+# Disclaimer
+I am employed with [The Advocacy People](https://www.theadvocacypeople.org.uk/) however this work is my personal project and is in no way affiliated with my employer
 
 # Credits
 
