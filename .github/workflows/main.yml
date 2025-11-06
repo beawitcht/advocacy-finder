@@ -3,6 +3,10 @@ name: Generate index
 on:
   push:
     branches: [ main ]
+    paths:
+      - '**/*.csv'
+      - 'gen_main.py'
+      - 'index-template.html'
   workflow_dispatch:
 
 jobs:
@@ -35,6 +39,6 @@ jobs:
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "chore(generated): update index.html"
+            git commit -m "index.html built"
             git push
           fi
