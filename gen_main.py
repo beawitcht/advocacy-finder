@@ -80,7 +80,6 @@ def render(areas):
 
     def format_phone(digits):
         if digits:
-            print(digits)
             digits = parse(digits, "GB")
             return str(format_number(digits, 2))
         # fallback
