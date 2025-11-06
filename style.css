@@ -107,6 +107,18 @@ a {
     font-size: 20px;
     font-weight: 600;
     text-align: center;
+
+
+}
+
+.provider-name a[href^="http"]::after {
+    content: "";
+    display: inline-block;
+    width: 0.6em;
+    height: 0.6em;
+    vertical-align: text-top;
+    background-size: 100%;
+    background-image: url("extlinkicon.svg");
 }
 
 /* service tags centered beneath provider info */
