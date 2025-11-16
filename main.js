@@ -4,6 +4,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('search-form');
     const postcodeInput = document.getElementById('postcode');
     const container = document.getElementById('address-container');
+    const areaDropdown = document.getElementById('area-dropdown');
+    const areaSearch = document.getElementById('area-search');
+
+    // Store all dropdown options for filtering
+    let allOptions = [];
+    if (areaDropdown) {
+        allOptions = Array.from(areaDropdown.options).slice(1); // Skip the placeholder
+    }
 
     function pickDisplayNameFromLocalAuthority(localAuthority) {
         if (!localAuthority) return null;
@@ -30,8 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const matched = areas.filter(area => {
             const nameEl = area.querySelector('.area-name');
             const areaName = nameEl ? normalizeName(nameEl.textContent) : '';
-            // try exact match or substring both ways to be forgiving
-            return areaName === target || areaName.includes(target) || target.includes(areaName);
+            return areaName === target;
         });
 
         if (matched.length === 0) {
@@ -49,19 +56,65 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Handle area dropdown change
+    if (areaDropdown) {
+        areaDropdown.addEventListener('change', (e) => {
+            const selectedArea = e.target.value;
+            if (selectedArea) {
+                document.body.classList.add('search-done');
+                container.textContent = '';
+                showMatches(selectedArea);
+            } else {
+                hideAllAreas();
+                document.body.classList.remove('search-done');
+            }
+        });
+    }
+
+    // Handle area search input for filtering dropdown
+    if (areaSearch) {
+        areaSearch.addEventListener('input', (e) => {
+            const searchTerm = normalizeName(e.target.value);
+
+            // Clear the dropdown except for the placeholder
+            while (areaDropdown.options.length > 1) {
+                areaDropdown.remove(1);
+            }
+
+            // Filter and re-add matching options
+            const filteredOptions = allOptions.filter(option => {
+                const optionText = normalizeName(option.textContent);
+                return optionText.includes(searchTerm);
+            });
+
+            filteredOptions.forEach(option => {
+                areaDropdown.add(option.cloneNode(true));
+            });
+
+            // If there's only one match and search term is not empty, auto-select it
+            if (filteredOptions.length === 1 && searchTerm) {
+                areaDropdown.selectedIndex = 1;
+                areaDropdown.dispatchEvent(new Event('change'));
+            }
+        });
+
+        // When clicking on the search input, show the dropdown
+        areaSearch.addEventListener('focus', () => {
+            areaSearch.select();
+        });
+    }
+
     async function fetchJsonOrDetectHtml(url) {
         const res = await fetch(url);
         if (!res.ok) {
             const txt = await res.text();
             return { ok: false, status: res.status, statusText: res.statusText, bodyText: txt };
         }
-
         const contentType = (res.headers.get('content-type') || '').toLowerCase();
         if (contentType.includes('application/json') || contentType.includes('+json')) {
             const json = await res.json();
             return { ok: true, json };
         }
-
         // not JSON according to headers — read text and try to detect HTML or parse JSON fallback
         const txt = await res.text();
         if (txt.trim().startsWith('<')) {
@@ -101,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     return;
                 }
                 // other error
-                container.innerHTML = `<div>Error: ${String(result.status || '')} ${String(result.statusText || '')}</div><pre>${String(result.bodyText || '')}</pre>`;
+                container.innerHTML = `<pre>Error: ${result.status} ${result.statusText}\n\n${String(result.bodyText || '')}</pre>`;
                 return;
             }
 
@@ -118,6 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 container.textContent = '';
                 const select = document.createElement('select');
                 select.id = 'addresses-select';
+
                 const placeholder = document.createElement('option');
                 placeholder.value = '';
                 placeholder.textContent = '-- choose an address --';
@@ -134,29 +188,27 @@ document.addEventListener('DOMContentLoaded', () => {
                     const slug = ev.target.value;
                     hideAllAreas();
                     if (!slug) return;
-                    container.textContent = 'Loading authority data...';
 
+                    container.textContent = 'Loading authority data...';
                     const authUrl = 'https://www.transinformed.co.uk/api/pass-thru?query=https://www.gov.uk/api/local-authority/' + encodeURIComponent(slug);
 
                     try {
                         const authResult = await fetchJsonOrDetectHtml(authUrl);
+
                         if (!authResult.ok) {
                             if (authResult.html || (authResult.bodyText && authResult.bodyText.trim().startsWith('<'))) {
                                 container.textContent = 'Authority response invalid';
                                 return;
                             }
-                            container.innerHTML = `<div>Error fetching authority: ${String(authResult.status || '')} ${String(authResult.statusText || '')}</div><pre>${String(authResult.bodyText || '')}</pre>`;
+                            container.innerHTML = `<pre>Error: ${authResult.status} ${authResult.statusText}\n\n${String(authResult.bodyText || '')}</pre>`;
                             return;
                         }
 
                         const authData = authResult.json;
                         if (authData && authData.local_authority) {
                             const keepName = pickDisplayNameFromLocalAuthority(authData.local_authority);
-                            container.innerHTML = `<div><strong>${String(keepName || 'none')}</strong></div>`;
+                            container.innerHTML = `<pre>Authority: ${keepName || 'Unknown'}\n\n${JSON.stringify(authData, null, 2)}</pre>`;
                             showMatches(keepName);
-                        } else {
-                            // fallback: show JSON if shape unexpected
-                            container.innerHTML = `<pre>${JSON.stringify(authData, null, 2)}</pre>`;
                         }
                     } catch (err) {
                         container.textContent = 'Network error: ' + err.message;
@@ -170,14 +222,9 @@ document.addEventListener('DOMContentLoaded', () => {
             // no addresses path: data may include local_authority directly
             if (data && data.local_authority) {
                 const keepName = pickDisplayNameFromLocalAuthority(data.local_authority);
-                container.innerHTML = `<div><strong>${String(keepName || 'none')}</strong></div>`;
+                container.innerHTML = `<pre>Authority: ${keepName || 'Unknown'}\n\n${JSON.stringify(data, null, 2)}</pre>`;
                 showMatches(keepName);
-                return;
             }
-
-            // fallback: show raw JSON
-            container.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
-
         } catch (err) {
             container.textContent = 'Network error: ' + err.message;
         }

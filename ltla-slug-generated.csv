@@ -1,0 +1,152 @@
+area name,area slug,area example postcode
+Hartlepool Borough Council,hartlepool,TS24 7DA
+Middlesbrough Borough Council,middlesbrough,TS1 2RX
+Redcar and Cleveland Borough Council,redcar-and-cleveland,TS10 3AA
+Stockton-on-Tees Borough Council,stockton-on-tees,TS18 1BZ
+Darlington Borough Council,darlington,DL3 7NR
+Halton Borough Council,halton,WA8 0RR
+Warrington Borough Council,warrington,WA1 1BL
+Blackburn with Darwen Borough Council,blackburn-with-darwen,BB3 2HA
+Blackpool Borough Council,blackpool,FY1 1PP
+Hull City Council,kingston-upon-hull,HU1 3EN
+East Riding of Yorkshire Council,east-riding-of-yorkshire,HU20 3US
+North East Lincolnshire Council,north-east-lincolnshire,DN37 9UA
+North Lincolnshire Council,north-lincolnshire,DN15 8TE
+City of York Council,york,YO1 7HZ
+Derby City,derby,DE1 2AB
+Leicester City Council,leicester,LE1 5EW
+Leicestershire County Council,melton,LE15 8LY
+Nottingham City Council,nottingham,NG1 2BL
+Hertfordshire County Council,east-hertfordshire,SG14 1BY
+Telford & Wrekin Council,telford-and-wrekin,TF3 4JG
+Staffordshire County Council,newcastle-under-lyme,ST5 3NE
+Bath and North East Somerset Council,bath-and-north-east-somerset,BA2 4AL
+Bristol City Council,bristol,BS1 3RD
+North Somerset Council,north-somerset,BS49 4NR
+South Gloucestershire Council,south-gloucestershire,BS16 5NL
+Plymouth City Council,plymouth,PL1 3DQ
+Torbay Council,torbay,TQ1 1EB
+Swindon Borough Council,swindon,SN1 4BJ
+Peterborough City Council,peterborough,PE1 1RS
+Luton Borough Council,luton,LU1 3XW
+Southend-on-Sea City Council,southend-on-sea,SS0 7RN
+Thurrock Council,thurrock,RM20 2ZN
+Medway Council,medway,ME2 2SS
+Bracknell Forest Council,bracknell-forest,RG12 9RB
+West Berkshire Council,west-berkshire,RG14 5BE
+Reading Borough Council,reading,RG1 3EJ
+Slough Borough Council,slough,SL1 1DH
+Royal Borough of Windsor and Maidenhead,windsor-and-maidenhead,SL6 8PE
+Wokingham Borough Council,wokingham,RG40 1LY
+Milton Keynes City Council,milton-keynes,MK9 3PD
+Brighton and Hove City Council,brighton-and-hove,BN1 1AL
+Portsmouth City Council,portsmouth,PO1 3FR
+Southampton City Council,southampton,SO15 1DE
+Isle of Wight Council,isle-of-wight,PO33 1LE
+Durham County Council,county-durham,DH1 3NU
+Cheshire East Council,cheshire-east,SK11 9HF
+Cheshire West and Chester Council,cheshire-west-and-chester,CW6 9DZ
+Shropshire Council,shropshire,SY3 8JQ
+Cornwall Council,cornwall,PL28 8BY
+Council of the Isles of Scilly,isles-of-scilly,TR21 0HU
+Wiltshire Council,wiltshire,SP3 6DP
+Bedford Borough Council,bedford,MK41 0UE
+Central Bedfordshire Council,central-bedfordshire,MK45 5HB
+Northumberland County Council,northumberland,NE67 5FD
+"Bournemouth, Christchurch and Poole Council",bournemouth-christchurch-poole,BH23 1BU
+Dorset Council,dorset,DT1 1HX
+Bolton Metropolitan Borough Council,bolton,BL6 5LA
+Bury Metropolitan Borough Council,bury,BL9 0JS
+Manchester City Council,manchester,M60 7HA
+Oldham Metropolitan Borough Council,oldham,OL1 3TQ
+Rochdale Metropolitan Borough Council,rochdale,OL11 2AL
+Salford City Council,salford,M50 3AZ
+Stockport Metropolitan Borough Council,stockport,SK1 1HD
+Tameside Metropolitan Borough Council,tameside,OL6 9AQ
+Trafford Metropolitan Borough Council,trafford,M17 8EH
+Wigan Metropolitan Borough Council,wigan,WN3 5BE
+Knowsley Metropolitan Borough Council,knowsley,L34 0HD
+Liverpool City Council,liverpool,L1 4BL
+St Helens Council,st-helens,WA10 2JX
+Sefton Metropolitan Borough Council,sefton,L29 7WA
+Wirral Council,wirral,CH42 1LS
+Barnsley Metropolitan Borough Council,barnsley,S70 1GW
+Doncaster Metropolitan Borough Council,doncaster,DN1 2PH
+Rotherham Metropolitan Borough Council,rotherham,S60 1HW
+Sheffield City Council,sheffield,S1 4HS
+Newcastle City Council,newcastle-upon-tyne,NE1 7AL
+North Tyneside Council,north-tyneside,NE30 1HF
+South Tyneside Council,south-tyneside,NE33 3PS
+Sunderland City Council,sunderland,SR5 1BA
+Birmingham City Council,birmingham,B18 6AR
+Coventry City Council,coventry,CV5 6HB
+Dudley Metropolitan Borough Council,dudley,DY1 4TB
+Sandwell Metropolitan Borough Council,sandwell,B69 2AQ
+Solihull Metropolitan Borough Council,solihull,B91 3RX
+Walsall Metropolitan Borough Council,walsall,WS1 3HL
+City of Wolverhampton Council,wolverhampton,WV1 1LJ
+City of Bradford Metropolitan District Council,bradford,BD7 1AL
+Calderdale Metropolitan Borough Council,calderdale,HX1 1NH
+Kirklees Council,kirklees,HD9 7BB
+Leeds City Council,leeds,LS1 5PS
+Wakefield Metropolitan District Council,wakefield,WF1 2TS
+Gateshead Metropolitan Borough Council,gateshead,NE11 0YJ
+City of London Corporation,city-of-london,EC3M 8AA
+London Borough of Barking and Dagenham,barking-and-dagenham,RM8 1BJ
+London Borough of Barnet,barnet,EN5 4QS
+London Borough of Bexley,bexley,DA5 1LA
+London Borough of Brent,brent,HA9 0JT
+London Borough of Bromley,bromley,BR1 1QU
+London Borough of Camden,camden,NW1 7JN
+London Borough of Croydon,croydon,CR2 6PB
+London Borough of Ealing,ealing,W5 5FA
+London Borough of Enfield,enfield,EN1 1QZ
+Royal Borough of Greenwich,greenwich,SE10 9JB
+London Borough of Hackney,hackney,E8 4RU
+London Borough of Hammersmith & Fulham,hammersmith-and-fulham,W6 7AB
+London Borough of Haringey,haringey,N4 1LG
+London Borough of Harrow,harrow,HA1 2TB
+London Borough of Havering,havering,RM4 1PJ
+London Borough of Hillingdon,hillingdon,UB10 9JY
+London Borough of Hounslow,hounslow,TW3 3TY
+London Borough of Islington,islington,N1 0HB
+Royal Borough of Kensington and Chelsea,kensington-and-chelsea,SW3 5UU
+Royal Borough of Kingston upon Thames,kingston-upon-thames,KT1 1QN
+London Borough of Lambeth,lambeth,SE1 7AB
+London Borough of Lewisham,lewisham,SE13 7SW
+London Borough of Merton,merton,SW19 5EE
+London Borough of Newham,newham,E6 3BB
+London Borough of Redbridge,redbridge,E18 1AY
+London Borough of Richmond upon Thames,richmond-upon-thames,TW9 1TH
+London Borough of Southwark,southwark,SE1 0LR
+London Borough of Sutton,sutton,SM2 6LE
+London Borough of Tower Hamlets,tower-hamlets,E1 5QJ
+London Borough of Waltham Forest,waltham-forest,E17 6AA
+London Borough of Wandsworth,wandsworth,SW18 1TF
+City of Westminster,westminster,SW1A 2BX
+Buckinghamshire Council,buckinghamshire,SL9 8NL
+Cambridgeshire County Council,cambridge,CB2 1TB
+Cumberland Council,cumberland,CA8 9LU
+Derby City,derby,DE1 2AB
+Devon County Council,north-devon,EX39 4JJ
+East Sussex County Council,rother,TN35 4AX
+Essex County Council,chelmsford,CM3 1BG
+Gloucestershire County Council,gloucester,GL2 2FY
+Hampshire County Council,hart,RG27 0LD
+Hertfordshire County Council,east-hertfordshire,SG14 1BY
+Kent County Council,maidstone,TN27 9PT
+Halton Borough Council,halton,WA7 2AD
+Leicestershire County Council,charnwood,LE12 8RZ
+Lincolnshire County Council,north-kesteven,LN6 9NH
+Norfolk County Council,north-norfolk,NR12 9AB
+West Northamptonshire Council,west-northamptonshire,NN4 8BS
+North Yorkshire Council,north-yorkshire,HG4 3ET
+Nottingham City Council,nottingham,NG2 3JL
+Oxfordshire County Council,oxford,OX2 0NG
+Somerset Council,somerset,TA13 5BW
+Staffordshire County Council,newcastle-under-lyme,ST5 3NE
+Suffolk County Council,east-suffolk,IP15 5AU
+Surrey County Council,guildford,GU1 3HQ
+Warwickshire County Council,warwick,CV34 5YN
+West Sussex County Council,horsham,BN5 9LJ
+Worcestershire County Council,worcester,WR2 5BA

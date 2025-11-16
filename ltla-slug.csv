@@ -1,0 +1,152 @@
+area name, area slug, area example postcode
+Hartlepool Borough Council,hartlepool,TS24 7DA
+Middlesbrough Borough Council,middlesbrough,TS1 2RX
+Redcar and Cleveland Borough Council,redcar-and-cleveland,TS10 3AA
+Stockton-on-Tees Borough Council,stockton-on-tees,TS18 1BZ
+Darlington Borough Council,darlington,DL3 7NR
+Halton,halton,WA8 0RR
+Warrington Borough Council,warrington,WA1 1BL
+Blackburn with Darwen Borough Council,blackburn-with-darwen,BB3 2HA
+Blackpool Borough Council,blackpool,FY1 1PP
+Hull City Council,kingston-upon-hull,HU1 3EN
+East Riding of Yorkshire Council,east-riding-of-yorkshire,HU20 3US
+North East Lincolnshire Council,north-east-lincolnshire,DN37 9UA
+North Lincolnshire,,DN15 8TE
+York,,YO1 7HZ
+Derby City,,DE1 2AB
+Leicester City Council,,LE1 5EW
+Rutland County Council,,LE15 8LY
+Nottingham,,NG1 2BL
+Herefordshire,,SG14 1BY
+Telford & Wrekin Council,,TF3 4JG
+Stoke-on-Trent,,ST5 3NE
+Bath and North East Somerset,,BA2 4AL
+Bristol,,BS1 3RD
+North Somerset,,BS49 4NR
+South Gloucestershire,,BS16 5NL
+Plymouth,,PL1 3DQ
+Torbay,,TQ1 1EB
+Swindon,,SN1 4BJ
+Peterborough,,PE1 1RS
+Luton,,LU1 3XW
+Southend-on-Sea,,SS0 7RN
+Thurrock,,RM20 2ZN
+Medway,,ME2 2SS
+Bracknell Forest,,RG12 9RB
+West Berkshire,,RG14 5BE
+Reading,,RG1 3EJ
+Slough,,SL1 1DH
+Windsor and Maidenhead,,SL6 8PE
+Wokingham,,RG40 1LY
+Milton Keynes,,MK9 3PD
+Brighton and Hove,,BN1 1AL
+Portsmouth,,PO1 3FR
+Southampton,,SO15 1DE
+Isle of Wight,,PO33 1LE
+Durham County Council,,DH1 3NU
+Cheshire East,,SK11 9HF
+Cheshire West and Chester,,CW6 9DZ
+Shropshire,,SY3 8JQ
+Cornwall,,PL28 8BY
+Isles of Scilly,,TR21 0HU
+Wiltshire,,SP3 6DP
+Bedford,,MK41 0UE
+Central Bedfordshire,,MK45 5HB
+Northumberland,,NE67 5FD
+"Bournemouth, Christchurch and Poole",,BH23 1BU
+Dorset,,DT1 1HX
+Bolton,,BL6 5LA
+Bury,,BL9 0JS
+Manchester,,M60 7HA
+Oldham,,OL1 3TQ
+Rochdale,,OL11 2AL
+Salford,,M50 3AZ
+Stockport,,SK1 1HD
+Tameside,,OL6 9AQ
+Trafford,,M17 8EH
+Wigan,,WN3 5BE
+Knowsley,,L34 0HD
+Liverpool,,L1 4BL
+St Helens Council,,WA10 2JX
+Sefton,,L29 7WA
+Wirral,,CH42 1LS
+Barnsley,,S70 1GW
+Doncaster,,DN1 2PH
+Rotherham,,S60 1HW
+Sheffield,,S1 4HS
+Newcastle City Council,,NE1 7AL
+North Tyneside,,NE30 1HF
+South Tyneside,,NE33 3PS
+Sunderland,,SR5 1BA
+Birmingham,,B18 6AR
+Coventry,,CV5 6HB
+Dudley,,DY1 4TB
+Sandwell,,B69 2AQ
+Solihull,,B91 3RX
+Walsall,,WS1 3HL
+Wolverhampton,,WV1 1LJ
+Bradford,,BD7 1AL
+Calderdale,,HX1 1NH
+Kirklees,,HD9 7BB
+Leeds,,LS1 5PS
+Wakefield,,WF1 2TS
+Gateshead,,NE11 0YJ
+City of London,,EC3M 8AA
+Barking and Dagenham,,RM8 1BJ
+Barnet,,EN5 4QS
+Bexley,,DA5 1LA
+Brent,,HA9 0JT
+Bromley,,BR1 1QU
+Camden,,NW1 7JN
+Croydon,,CR2 6PB
+Ealing,,W5 5FA
+Enfield,,EN1 1QZ
+Greenwich,,SE10 9JB
+London Borough of Hackney,,E8 4RU
+London Borough of Hammersmith & Fulham,,W6 7AB
+Haringey,,N4 1LG
+Harrow,,HA1 2TB
+Havering,,RM4 1PJ
+Hillingdon,,UB10 9JY
+Hounslow,,TW3 3TY
+Islington,,N1 0HB
+Kensington and Chelsea,,SW3 5UU
+Kingston upon Thames,,KT1 1QN
+Lambeth,,SE1 7AB
+Lewisham,,SE13 7SW
+Merton,,SW19 5EE
+Newham,,E6 3BB
+Redbridge,,E18 1AY
+Richmond upon Thames,,TW9 1TH
+Southwark,,SE1 0LR
+Sutton,,SM2 6LE
+Tower Hamlets,,E1 5QJ
+Waltham Forest,,E17 6AA
+Wandsworth,,SW18 1TF
+Westminster,,SW1A 2BX
+Buckinghamshire,,SL9 8NL
+Cambridgeshire,,CB2 1TB
+Cumberland Council,,CA8 9LU
+Derbyshire,,DE1 2AB
+Devon,,EX39 4JJ
+East Sussex,,TN35 4AX
+Essex,,CM3 1BG
+Gloucestershire,,GL2 2FY
+Hampshire,,RG27 0LD
+Hertfordshire,,SG14 1BY
+Kent,,TN27 9PT
+Lancashire County Council,lancashire,WA7 2AD
+Leicestershire,,LE12 8RZ
+Lincolnshire,,LN6 9NH
+Norfolk,,NR12 9AB
+Northamptonshire,,NN4 8BS
+North Yorkshire,,HG4 3ET
+Nottinghamshire,,NG2 3JL
+Oxfordshire,,OX2 0NG
+Somerset,,TA13 5BW
+Staffordshire,,ST5 3NE
+Suffolk,,IP15 5AU
+Surrey,,GU1 3HQ
+Warwickshire,,CV34 5YN
+West Sussex,,BN5 9LJ
+Worcestershire,,WR2 5BA

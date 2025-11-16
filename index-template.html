@@ -27,6 +27,16 @@
                 <input type="text" id="postcode" name="postcode" placeholder="e.g. TN39 3HN">
                 <button type="submit">Find Service</button>
             </form>
+
+            <div id="area-dropdown-container">
+                <input type="text" id="area-search" placeholder="Search areas..." autocomplete="off">
+                <select id="area-dropdown" size="1">
+                    <option value="">-- Select an area --</option>
+                    {% for area in areas %}
+                    <option value="{{ area.area }}">{{ area.area }}</option>
+                    {% endfor %}
+                </select>
+            </div>
         </section>
 
         <section id="address">
@@ -73,7 +83,8 @@
     </main>
 
     <footer>
-        <span><a class="bea" href="https://beawitcht.carrd.co/" target="_blank" rel="noopener noreferrer">Developed by Bea 💜</a></span><br>
+        <span><a class="bea" href="https://beawitcht.carrd.co/" target="_blank" rel="noopener noreferrer">Developed by
+                Bea 💜</a></span><br>
         <span>©️ Knowledge belongs to all without limits</span>
     </footer>
 </body>
