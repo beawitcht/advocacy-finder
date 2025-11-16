@@ -31,9 +31,9 @@ main {
 /* header/footer center */
 header,
 footer {
-    width: 100%;
+    max-width: 680px;
     text-align: center;
-    margin: 8px 0;
+    margin: 8px 8px;
 }
 
 /* sections */
@@ -76,6 +76,7 @@ footer {
     justify-content: center;
     /* center providers inside area */
     align-items: flex-start;
+    overflow-wrap: anywhere
 }
 
 /* provider card styling - compact, centered content */
@@ -94,6 +95,7 @@ footer {
     box-sizing: border-box;
 }
 
+
 /* links and text */
 a {
     color: inherit;
@@ -105,6 +107,18 @@ a {
     font-size: 20px;
     font-weight: 600;
     text-align: center;
+
+
+}
+
+.provider-name a[href^="http"]::after {
+    content: "";
+    display: inline-block;
+    width: 0.6em;
+    height: 0.6em;
+    vertical-align: text-top;
+    background-size: 100%;
+    background-image: url("extlinkicon.svg");
 }
 
 /* service tags centered beneath provider info */
@@ -120,16 +134,16 @@ a {
     display: inline-block;
     background: #0d2846;
     color: #fff;
-    padding: 6px 10px;
+    padding: 4px 8px;
     margin: 2px;
     border-radius: 4px;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 /* phone/email centered and slightly smaller */
 .provider-phone,
 .provider-email {
-    font-size: 18px;
+    font-size: 16px;
     margin-top: 8px;
     text-align: center;
     color: #333;

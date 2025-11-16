@@ -1,6 +1,9 @@
 import csv
 import os
+import re
+from phonenumbers import format_number, parse
 from jinja2 import Environment, FileSystemLoader, select_autoescape
+from htmlmin import minify as htmlminify
 
 BASE_DIR = os.path.dirname(__file__)
 TEMPLATE_NAME = "index-template.html"
@@ -74,14 +77,34 @@ def render(areas):
         trim_blocks=True,
         lstrip_blocks=True,
     )
+
+    def format_phone(digits):
+        if digits:
+            digits = parse(digits, "GB")
+            return str(format_number(digits, 2))
+        # fallback
+        return digits.strip()
+
+    env.filters["format_phone"] = format_phone
+
     tmpl = env.get_template(TEMPLATE_NAME)
     return tmpl.render(areas=areas)
+
+
+def minify_html(html_str):
+    return htmlminify(
+        html_str,
+        remove_comments=True,
+        reduce_empty_attributes=True,
+        remove_optional_attribute_quotes=False,
+    )
 
 
 def main():
     providers_map = load_providers(PROVIDERS_CSV)
     areas = load_areas(AREAS_CSV, providers_map)
     html = render(areas)
+    html = minify_html(html)
     out_path = os.path.join(BASE_DIR, OUTPUT_NAME)
     with open(out_path, "w", encoding="utf-8") as fh:
         fh.write(html)

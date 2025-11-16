@@ -4,7 +4,10 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Advocacy Finder - England</title>
+    <meta name="description"
+        content="Find statutory advocacy services in England, covering Mental Health, Mental Capacity, Care Act, and Health complaints Advocacy for each authority area.">
+        <meta name="google-site-verification" content="Bzn-_FyH4ojn4jVvTQMQhEfo-ahKikT-T8fsGIFoOVw" />
+    <title>Who is my advocacy provider in England?</title>
     <link rel="stylesheet" href="style.css" />
     <script src="main.min.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,8 +18,9 @@
 
 <body>
     <header>
-        <h1>Advocacy Service Search - England</h1>
-        <p>Find statutory advocacy services in your local area.</p>
+        <h1>Advocacy Provider Search - England</h1>
+        <h2>Find statutory advocacy services in your area.</h2>
+        <p><a href="about.html">About this service and FAQ</a></p>
     </header>
 
     <main>
@@ -61,10 +65,11 @@
                         {% endif %}
 
                         {% if p.phone %}
-                        <div class="provider-phone">Phone: <a href="tel:{{ p.phone }}">{{ p.phone }}</a></div>
+                        <div class="provider-phone">Phone:<br><a href="tel:{{ p.phone }}">{{ p.phone | format_phone
+                                }}</a></div>
                         {% endif %}
                         {% if p.email %}
-                        <div class="provider-email">Email: <a href="mailto:{{ p.email }}">{{ p.email }}</a></div>
+                        <div class="provider-email">Email:<br><a href="mailto:{{ p.email }}">{{ p.email }}</a></div>
                         {% endif %}
 
                         {% if p.services %}
