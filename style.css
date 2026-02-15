@@ -235,3 +235,47 @@ body:not(.search-done) #areas h2 {
 #area-dropdown option {
     padding: 0.5rem;
 }
+
+/* contact + copy button layout */
+.provider-contact {
+    position: relative;
+    display: inline-block;
+}
+
+/* copyable link styling + tooltip */
+.copy-link {
+    position: relative;
+    color: inherit;
+    text-decoration: underline;
+}
+
+.copy-link::after {
+    content: 'Copy';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) translateY(0);
+    bottom: calc(100% + 8px);
+    background: rgba(17, 17, 17, 0.95);
+    color: #fff;
+    font-size: 12px;
+    padding: 6px 8px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 120ms ease-out, transform 120ms ease-out;
+}
+
+.copy-link:hover::after,
+.copy-link:focus::after {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-6px);
+}
+
+/* when copied, show 'Copied' then allow fade via transition defined below */
+.copy-link.copied::after {
+    content: 'Copied';
+    opacity: 1;
+    transform: translateX(-50%) translateY(-6px);
+    transition: opacity 120ms ease-out, transform 120ms ease-out;
+}

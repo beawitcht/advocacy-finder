@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (matched.length === 0) {
-            // no match — leave all hidden
+            // no match - leave all hidden
             return;
         }
 
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const json = await res.json();
             return { ok: true, json };
         }
-        // not JSON according to headers — read text and try to detect HTML or parse JSON fallback
+        // not JSON according to headers- read text and try to detect HTML or parse JSON fallback
         const txt = await res.text();
         if (txt.trim().startsWith('<')) {
             return { ok: false, html: true, bodyText: txt };
@@ -227,6 +227,59 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         } catch (err) {
             container.textContent = 'Network error: ' + err.message;
+        }
+    });
+
+    // Copy handling for links with class .copy-link- clicking copies the displayed text
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest && e.target.closest('.copy-link');
+        if (!link) return;
+        e.preventDefault();
+        const value = link.getAttribute('data-copy-value') || link.textContent || '';
+        if (!value) return;
+
+        const setCopied = () => {
+            const prevAria = link.getAttribute('aria-label');
+            link.classList.add('copied');
+            link.setAttribute('aria-label', 'Copied');
+            setTimeout(() => {
+                link.classList.remove('copied');
+                link.setAttribute('aria-label', prevAria || 'Copy');
+            }, 120);
+        };
+
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(value).then(setCopied).catch(() => {
+                // fallback
+                try {
+                    const ta = document.createElement('textarea');
+                    ta.value = value;
+                    ta.style.position = 'fixed';
+                    ta.style.opacity = '0';
+                    document.body.appendChild(ta);
+                    ta.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(ta);
+                    setCopied();
+                } catch (err) {
+                    console.warn('Copy failed', err);
+                }
+            });
+        } else {
+            // older fallback
+            try {
+                const ta = document.createElement('textarea');
+                ta.value = value;
+                ta.style.position = 'fixed';
+                ta.style.opacity = '0';
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                setCopied();
+            } catch (err) {
+                console.warn('Copy failed', err);
+            }
         }
     });
 });

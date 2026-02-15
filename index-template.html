@@ -8,7 +8,7 @@
         content="Find statutory advocacy services in England, covering Mental Health, Mental Capacity, Care Act, and Health complaints Advocacy for each authority area.">
     <title>Who is my advocacy provider in England?</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="main.min.js" defer></script>
+    <script src="main.js" defer></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="canonical" href="https://advocacy.beawitcht.com/">
@@ -65,11 +65,18 @@
                         {% endif %}
 
                         {% if p.phone %}
-                        <div class="provider-phone">Phone:<br><a href="tel:{{ p.phone }}">{{ p.phone | format_phone
-                                }}</a></div>
+                        <div class="provider-phone">Phone:<br>
+                            <div class="provider-contact">
+                                <a href="tel:{{ p.phone }}" class="copy-link" data-copy-value="{{ p.phone | format_phone }}" aria-label="Copy phone number">{{ p.phone | format_phone }}</a>
+                            </div>
+                        </div>
                         {% endif %}
                         {% if p.email %}
-                        <div class="provider-email">Email:<br><a href="mailto:{{ p.email }}">{{ p.email }}</a></div>
+                        <div class="provider-email">Email:<br>
+                            <div class="provider-contact">
+                                <a href="mailto:{{ p.email }}" class="copy-link" data-copy-value="{{ p.email }}" aria-label="Copy email address">{{ p.email }}</a>
+                            </div>
+                        </div>
                         {% endif %}
 
                         {% if p.services %}
