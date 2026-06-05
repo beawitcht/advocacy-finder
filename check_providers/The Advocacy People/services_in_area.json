@@ -1,0 +1,147 @@
+{
+  "bath-%26-north-east-somerset": [
+    "IHCA",
+    "IMHA",
+    "ICAA",
+    "IMCA",
+    "Social Care Complaints",
+    "Litigation Friend"
+  ],
+  "brighton-%26-hove": [
+    "IHCA",
+    "ICAA",
+    "IMCA",
+    "Community"
+  ],
+  "dorset": [
+    "IHCA"
+  ],
+  "isles-of-scilly": [
+    "IHCA",
+    "IMHA",
+    "ICAA",
+    "IMCA",
+    "Community"
+  ],
+  "milton-keynes": [
+    "IHCA",
+    "IMHA",
+    "ICAA",
+    "IMCA"
+  ],
+  "portsmouth-city": [
+    "IHCA",
+    "healthwatch"
+  ],
+  "southampton-city": [
+    "IHCA",
+    "IMHA",
+    "ICAA",
+    "IMCA",
+    "CYP",
+    "Community",
+    "self-advocacy-groups",
+    "independent-visitors"
+  ],
+  "the-royal-borough-of-windsor-%26-maidenhead": [
+    "IHCA",
+    "IMHA",
+    "ICAA",
+    "IMCA",
+    "Community",
+    "self-advocacy-groups"
+  ],
+  "west-sussex": [
+    "ICAA",
+    "IMCA"
+  ],
+  "bournemouth%2C-christchurch-and-poole": [
+    "IHCA"
+  ],
+  "buckinghamshire": [
+    "IHCA"
+  ],
+  "east-sussex": [
+    "IHCA",
+    "IMCA"
+  ],
+  "kent": [
+    "IHCA",
+    "IMHA",
+    "ICAA",
+    "IMCA",
+    "Community"
+  ],
+  "north-somerset": [
+    "IHCA",
+    "IMHA",
+    "ICAA",
+    "IMCA"
+  ],
+  "reading": [
+    "IHCA",
+    "IMHA",
+    "ICAA",
+    "IMCA",
+    "healthwatch",
+    "Social Care Complaints"
+  ],
+  "southend-on-sea": [
+    "healthwatch"
+  ],
+  "wandsworth": [
+    "CYP"
+  ],
+  "wokingham": [
+    "healthwatch"
+  ],
+  "bracknell-forest": [
+    "IHCA",
+    "IMHA",
+    "ICAA",
+    "IMCA",
+    "CYP",
+    "Community",
+    "self-advocacy-groups"
+  ],
+  "cornwall": [
+    "IHCA",
+    "IMHA",
+    "ICAA",
+    "IMCA",
+    "Community",
+    "self-advocacy-groups",
+    "Social Care Complaints"
+  ],
+  "hampshire": [
+    "healthwatch"
+  ],
+  "hillingdon": [
+    "IHCA",
+    "IMHA",
+    "ICAA",
+    "IMCA",
+    "Community"
+  ],
+  "plymouth-city": [
+    "IHCA",
+    "IMHA",
+    "ICAA",
+    "IMCA",
+    "Community",
+    "Social Care Complaints"
+  ],
+  "somerset": [
+    "healthwatch"
+  ],
+  "southwark": [
+    "IMHA",
+    "ICAA",
+    "IMCA"
+  ],
+  "west-berkshire": [
+    "IHCA",
+    "self-advocacy-groups",
+    "healthwatch"
+  ]
+}
